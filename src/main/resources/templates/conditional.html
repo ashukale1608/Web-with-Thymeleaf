@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- elvis-operator -->
+    <h1>User is <span th:text="${active} ? ' Active ' : ' Not Active '"></span></h1>
+    
+    <!-- if-unless -->
+    <h1 th:if="${gendar == 'f'}">Femail</h1>
+    <h1 th:if="${gendar == 'm'}">Mail</h1>
+    <h1 th:unless="${gendar == 'f' || gendar == 'm'}">Other</h1>
+
+    <!-- switch-case -->
+    <div th:switch="${gendar}">
+        <h1 th:case="'f'">Femail</h1>
+        <h1 th:case="'m'">Mail</h1>
+        <h1 th:case="*">Other</h1>
+    </div>
+</body>
+
+</html>

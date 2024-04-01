@@ -1,0 +1,20 @@
+h1{
+    color: red;
+}
+
+body{
+    background-color: rgb(155, 186, 214);
+}
+.loginPage{
+    background-color: white;
+    margin-top: 30px;
+    padding-bottom: 20px;
+    margin-left: 30%;
+    margin-right: 30%;
+    border-radius: 10px;
+}
+input{
+    border-radius: 5px;
+    border: 1px solid gray;
+    box-shadow: 0px 2px 7px 1px gray;   
+}

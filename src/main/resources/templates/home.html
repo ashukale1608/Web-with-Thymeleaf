@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <link rel="stylesheet" th:href="@{/css/home.css}" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+</head>
+
+<body>
+    <section>
+        <form action="hello">
+            <div>
+                <h1 class="title">hello <span style="color: blue;" th:text="${name}"></span> in Thymeleaf Web App</h1>
+                <button class="btn btn-info" th:onClick="alertMessage()">alert message </button>
+            </div>
+            <button class="btn btn-info ml-5 ">Go To Add Data</button>
+        </form>
+        
+        <div>
+            <img th:src="@{/image/female-hand-typing-keyboard-laptop_1150-15742.avif}" alt="">
+        </div>
+        <div>
+            <footer th:replace="footer::footer1(${title})"></footer>
+        </div>
+    </section>
+    <script type="text/javascript" th:src="@{/js/home.js}"></script>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" th:href="@{css/home.css}">
+</head>
+
+<body>
+  <form action="home" class=" " th:object="${student}">
+    <div class="loginPage  ">
+      <br>
+      <h3 class="text-info text-center mt-3">Log In</h3>
+      <br>
+      <b><label for="" class="ml-5">Name : </label></b>
+      <input 
+        type="text" 
+        th:value="${student.name}"  
+        name="name" 
+        class="form-control mx-auto " 
+        style="width: 60%;height: 30px;"
+        th:classappend="${#fields.hasErrors('name') ? 'is-invalid' : ''}">      
+      <div th:each="e : ${#fields.errors('name')}"  th:text="${e}" id="validationServer03Feedback" class="invalid-feedback">
+      </div>
+      <br>
+      <br>      
+      <b><label for="" class="ml-5">Email : </label></b>
+      <input 
+        type="email" 
+        th:value="${student.email}" 
+        name="email"
+        class="form-control mx-auto " 
+        style="width: 60%;height: 30px;"
+        th:classappend="${#fields.hasErrors('email') ? 'is-invalid' : ''}">
+        <div th:each="e : ${#fields.errors('email')}"  th:text="${e}" id="validationServer03Feedback" class="invalid-feedback">
+        </div>
+      <br>
+      <br>
+      <b><label for="" class="ml-5">Password : </label></b>
+      <input 
+        type="password" 
+        th:value="${student.password}"
+        name="password" 
+        class="form-control mx-auto " 
+        style="width: 60%;height: 30px;"
+        th:classappend="${#fields.hasErrors('password') ? 'is-invalid' : ''}">
+        <div th:each="e : ${#fields.errors('password')}"  th:text="${e}" id="validationServer03Feedback" class="invalid-feedback">
+        </div>
+      <br>
+      <br>
+      <span style="margin-left: 25%;">
+        <button class="btn btn-info ml-5 ">Log In</button>
+      </span>
+    </div>
+  </form>
+  <div style="margin-top: 100px;padding-top: 180px;">
+    <footer th:insert="footer::footer1(${title})"></footer>
+  </div>
+
+</body>
+
+</html>
